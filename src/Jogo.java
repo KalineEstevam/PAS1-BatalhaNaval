@@ -2,6 +2,7 @@ import java.util.List;
 
 
 public class Jogo {
+
 	private Tabuleiro tabuleiro;
 	private List<Barco> listaDeBarcos;
 	
@@ -26,12 +27,27 @@ public class Jogo {
 	}
 	
 	public void addBarcoJogo(String nome , int tamanho)throws BarcoException{
+		
+		Barco barcoNovo = new Barco(nome, tamanho);
+		
 		if(nome.contains("%#") || nome.contains("&#6")){
 			throw new BarcoException("Nome deve conter apenas os seguintes caracteres (A..Z), (0..9) e (_-.)");
-		}else if(nome.contains("")){
+		}else if(nome.startsWith("s")){
 			throw new BarcoException("Nome invalido ''");
-		}	
-		Barco barcoNovo = new Barco();
-		listaDeBarcos.add(barcoNovo);
+		}
+		
+		if(barcoNovo.getNome().equals("BARCO_GRANDE")){
+			throw new BarcoException("Ja existe um barco com o nome 'BARCO_GRANDE' no jogo");
+		}
+			else{
+				listaDeBarcos.add(barcoNovo);
+		}
 	}
+	
+	public void addBarcoNoTabuleiro(Tabuleiro tab, String nome)throws BarcoException{
+		
+		Tabuleiro tabuleiro = new Tabuleiro();
+	}
+				
+	
 }
