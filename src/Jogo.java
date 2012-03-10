@@ -7,8 +7,6 @@ public class Jogo {
 	private List<Barco> listaDeBarcos;
 	
 	public Jogo(Tabuleiro tab){
-		tab.setAlt(20);
-		tab.setLarg(20);
 		this.tabuleiro = tab;
 	}
 	
@@ -48,6 +46,17 @@ public class Jogo {
 		
 		Tabuleiro tabuleiro = new Tabuleiro();
 	}
-				
+
+
+	public Tabuleiro getTabuleiro() {
+		return tabuleiro;
+	}
+
+
+	public void setTabuleiro(Tabuleiro tabuleiro) {
+		this.tabuleiro = tabuleiro;
+	}
+	
+	
 	
 }

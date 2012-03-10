@@ -10,8 +10,18 @@ public class Tabuleiro {
 	private int larg;
 	private int alt;
 	private int qtdeBarcos;
-	
 	private List<Barco> listaDeBarcos;
+	
+	
+	public Tabuleiro(){
+		this.listaDeBarcos = new ArrayList<Barco>();
+	}
+	
+	public Tabuleiro(int altura, int largura){
+		this.alt = altura;
+		this.larg = largura;
+		this.qtdeBarcos = 0;
+	}
 	
 	public void addBarcoNoTabuleiro(String nome, int l1, int a1, int l2, int a2)throws TabuleiroException{
 		int tam1 = a2 - a1;
@@ -36,10 +46,6 @@ public class Tabuleiro {
 		
 		listaDeBarcos.add(novoBarco);
 		
-	}
-	
-	public Tabuleiro(){
-		this.listaDeBarcos = new ArrayList<Barco>();
 	}
 	
 	

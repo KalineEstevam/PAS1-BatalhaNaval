@@ -34,5 +34,12 @@ public class JogoTeste {
 			assertEquals(e.getMessage(), "Ja existe um barco com o nome 'BARCO_GRANDE' no jogo");
 		}
 	}
+	@Test
+	public void criarJogo(){
+		Jogo novoJogo = new Jogo(new Tabuleiro(15,15));
+		assertEquals(15,novoJogo.getTabuleiro().getLarg());
+		assertEquals(15,novoJogo.getTabuleiro().getAlt());
+		assertEquals(0,novoJogo.getTabuleiro().getQtdeBarcos());
+	}
 
 }
